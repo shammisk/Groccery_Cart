@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 function UpdateUser() {
-  const BaseURL = 'http://localhost:5000';
+  const BaseURL = "https://groccery-cart-backend.vercel.app";
   const { id } = useParams();
   const [itemId, setItemId] = useState();
   const [itemName, setItemName] = useState();
@@ -28,7 +28,7 @@ function UpdateUser() {
       .put(`${BaseURL}/api/item/${id}`, { itemId, itemName, quentity })
       .then((result) => {
         console.log(result);
-        navigate('/');
+        navigate("/");
       })
       .catch((err) => console.log(err));
   };
@@ -37,7 +37,7 @@ function UpdateUser() {
     <div className="d-flex vh-100 bg-secondary justify-content-center align-items-center">
       <div className="col-md-6 bg-white rounded p-3">
         <form onSubmit={Update}>
-          <h2 className = "text-warning">Update Item</h2>
+          <h2 className="text-warning">Update Item</h2>
           <div className="mb-2">
             <label>Item Number</label>
             <input

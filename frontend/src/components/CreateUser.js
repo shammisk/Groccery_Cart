@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function CreateUser() {
-  const BaseURL = "http://localhost:5000";
+  const BaseURL = "https://groccery-cart-backend.vercel.app";
   const [itemId, setItemId] = useState();
   const [itemName, setItemName] = useState();
   const [quantity, setQuentity] = useState();

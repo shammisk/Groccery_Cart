@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Users() {
-  const BaseURL = "http://localhost:5000";
+  const BaseURL = "https://groccery-cart-backend.vercel.app";
   const [items, setItems] = useState([]);
 
   useEffect(() => {
