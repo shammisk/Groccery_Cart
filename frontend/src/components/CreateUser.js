@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CreateUser() {
-  const BaseURL = 'https://shopping-list-management-web-app-backend.vercel.app';
+  const BaseURL = "http://localhost:5000";
   const [itemId, setItemId] = useState();
   const [itemName, setItemName] = useState();
-  const [quentity, setQuentity] = useState();
+  const [quantity, setQuentity] = useState();
   const navigate = useNavigate();
 
   const Submit = (e) => {
     e.preventDefault();
     axios
-      .post(`${BaseURL}/api/item`, { itemId, itemName, quentity })
+      .post(`${BaseURL}/api/item`, { itemId, itemName, quantity })
       .then((result) => {
         console.log(result);
-        navigate('/');
+        navigate("/");
       })
       .catch((err) => console.log(err));
   };
@@ -24,7 +24,7 @@ function CreateUser() {
     <div className="d-flex vh-100 bg-secondary justify-content-center align-items-center">
       <div className="w-50 bg-white rounded p-3">
         <form onSubmit={Submit}>
-          <h2 className ="text-success" >Add Item</h2>
+          <h2 className="text-success">Add Item</h2>
           <div className="mb-2">
             <label>Item Number</label>
             <input
