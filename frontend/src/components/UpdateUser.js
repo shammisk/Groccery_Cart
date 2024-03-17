@@ -7,7 +7,7 @@ function UpdateUser() {
   const { id } = useParams();
   const [itemId, setItemId] = useState();
   const [itemName, setItemName] = useState();
-  const [quentity, setQuentity] = useState();
+  const [quantity, setQuentity] = useState();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function UpdateUser() {
   const Update = (e) => {
     e.preventDefault();
     axios
-      .put(`${BaseURL}/api/item/${id}`, { itemId, itemName, quentity })
+      .put(`${BaseURL}/api/item/${id}`, { itemId, itemName, quantity })
       .then((result) => {
         console.log(result);
         navigate("/");
@@ -61,7 +61,7 @@ function UpdateUser() {
             <input
               type="text"
               className="form-control"
-              value={quentity}
+              value={quantity}
               onChange={(e) => setQuentity(e.target.value)}
             />
           </div>
